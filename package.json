@@ -1,0 +1,18 @@
+{
+  "name": "nopy",
+  "version": "1.0.0",
+  "repository": "git@github.com:ntwigs/nopy.git",
+  "author": "ntwigs <oscar.cv.nordquist@gmail.com>",
+  "license": "MIT",
+  "prettier": "@goatee/prettier",
+  "scripts": {
+    "start": "parcel watch public/manifest.json --host localhost",
+    "build": "parcel build public/manifest.json"
+  },
+  "devDependencies": {
+    "@goatee/prettier": "^0.0.4",
+    "@parcel/config-webextension": "^2.7.0",
+    "parcel": "^2.7.0",
+    "typescript": "^4.8.3"
+  }
+}
