@@ -1,7 +1,8 @@
 import { getAlert } from '../alert/get-alert'
 import { getAlertContainer } from '../alert/get-alert-container'
 
-const alternatives = ['yarn add', 'bun install']
+const alternatives = ['bun install', 'yarn add', 'npm i']
+const devAlternatives = ['bun install -D', 'yarn add -D', 'npm i --dev']
 
 const CODE_POSITION = 1
 const getPackageName = (button: Element | Node): string => {
