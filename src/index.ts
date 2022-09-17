@@ -16,6 +16,7 @@ const main = () => {
   }
 
   appendButtons(button, buttons)
+  button.remove()
 }
 
 main()
