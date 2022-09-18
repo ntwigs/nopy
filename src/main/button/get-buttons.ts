@@ -1,8 +1,6 @@
 import { getAlert } from '../alert/get-alert'
 import { getAlertContainer } from '../alert/get-alert-container'
 
-const alternatives = ['bun install', 'yarn add', 'npm i']
-const devAlternatives = ['bun install -D', 'yarn add -D', 'npm i --dev']
 
 const CODE_POSITION = 1
 const getPackageName = (button: Element | Node): string => {
@@ -65,7 +63,7 @@ const addCopyOnClick = (
   })
 }
 
-export const getButtons = (button: Element): Node[] => {
+export const getButtons = (button: Element, alternatives: string[]): Node[] => {
   const packageName = getPackageName(button)
   return alternatives.map((alternative) => {
     const buttonClone = button.cloneNode(true)
