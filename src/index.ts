@@ -15,12 +15,16 @@ const main = () => {
     return logger(buttonError)
   }
 
-  const [buttons, buttonsError] = withError<Element[]>(() => getButtons(button, alternatives))
+  const [buttons, buttonsError] = withError<Element[]>(() =>
+    getButtons(button, alternatives)
+  )
   if (buttonsError) {
     return logger(buttonsError)
   }
 
-  const [devButtons, devButtonsError] = withError<Element[]>(() => getButtons(button, devAlternatives))
+  const [devButtons, devButtonsError] = withError<Element[]>(() =>
+    getButtons(button, devAlternatives)
+  )
   if (devButtonsError) {
     return logger(devButtonsError)
   }
@@ -30,7 +34,7 @@ const main = () => {
     return logger(titleError)
   }
 
-  const devTitle =  getDevTitle(title)
+  const devTitle = getDevTitle(title)
 
   appendButtons(button, [...devButtons, devTitle, ...buttons])
   button.remove()

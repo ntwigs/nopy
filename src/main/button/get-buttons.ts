@@ -1,7 +1,6 @@
 import { getAlert } from '../alert/get-alert'
 import { getAlertContainer } from '../alert/get-alert-container'
 
-
 const CODE_POSITION = 1
 const getPackageName = (button: Element | Node): string => {
   const buttonText = button.childNodes[CODE_POSITION].textContent
