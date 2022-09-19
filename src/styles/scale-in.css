@@ -1,0 +1,17 @@
+@keyframes scale-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+    max-height: 3rem;
+  }
+}
+
+.scale-in {
+  animation: 250ms scale-in;
+  animation-fill-mode: both;
+}
