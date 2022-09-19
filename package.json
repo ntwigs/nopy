@@ -8,7 +8,7 @@
   "scripts": {
     "start": "parcel watch public/manifest.json --host localhost",
     "build": "parcel build public/manifest.json",
-    "lint": "prettier --write ."
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@goatee/prettier": "^0.0.4",
