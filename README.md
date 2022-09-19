@@ -20,7 +20,7 @@ For far too long, the npm registry has only shown a "copy to install" button whi
 
 With this teeny tiny little extension - you'll be able to copy your dependencies from other popular package managers, such as Yarn or Bun install. Is the package something you wouldn't like to have in your dependencies? Fret not! Nopy also gives you the option to copy the install commando for development dependencies. 👌
 
-## How do I use Nopy?
+## How do I use Nopy? 🤔
 
 It's super simple. All you'll have to do is install the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/klmgfjdnkpnmebmikdnopdkbibelccld/) and Nopy will be up and running. The next time you visit any package at [NPM](https://www.npmjs.com/) you'll be greeted with lots of install options.
 
