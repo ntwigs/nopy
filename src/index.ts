@@ -3,6 +3,7 @@ import { getCopyButton } from './main/button/get-copy-button'
 import { getCopyTitle } from './main/title/get-copy-title'
 import { getDevTitle } from './main/title/get-dev-title'
 import { appendElements } from './utils/append-elements'
+import { getAnimatedElements } from './utils/get-animated-elements'
 import { logger } from './utils/logger'
 import { withError } from './utils/with-error'
 
@@ -36,14 +37,9 @@ const main = () => {
 
   const devTitle = getDevTitle(title)
   const elements = [...buttons, devTitle, ...devButtons] as HTMLDivElement[]
+  const animatedElements = getAnimatedElements(elements)
 
-  const scaleElements = elements.map((element, index) => {
-    element.classList.add('scale-in')
-    element.style.animationDelay = `${25 * index}ms`
-    return element
-  })
-
-  appendElements(button, scaleElements)
+  appendElements(button, animatedElements)
 }
 
 main()
