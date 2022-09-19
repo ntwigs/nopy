@@ -5,7 +5,8 @@
   "content_scripts": [
     {
       "matches": ["*://*.npmjs.com/package/*", "*://npmjs.com/package/*"],
-      "js": ["../src/index.ts"]
+      "js": ["../src/index.ts"],
+      "css": ["../src/styles/scale-in.css"]
     }
   ]
 }
