@@ -22,11 +22,11 @@ With this teeny tiny little extension - you'll be able to copy your dependencies
 
 ## How do I use Nopy?
 
-It super simple. All you'll have to do is install the extesion from the [Chrome Web Store](CHANGE_THIS) and Nopy will be up and running. The next time you visit any package at [NPM](https://www.npmjs.com/) you'll be greeted with lots of install options.
+It's super simple. All you'll have to do is install the extension from the [Chrome Web Store](CHANGE_THIS) and Nopy will be up and running. The next time you visit any package at [NPM](https://www.npmjs.com/) you'll be greeted with lots of install options.
 
 ## Show me the beauty 💅
 
-Install the extension and visit any package at [NPM](https://www.npmjs.com/), for example [React](https://www.npmjs.com/package/react) and you'll see a bunch of install options where the copy buttons usually are. 
+Install the extension and visit any package at [NPM](https://www.npmjs.com/), for example, [React](https://www.npmjs.com/package/react) and you'll see a bunch of install options where the copy buttons usually are. 
 
 <div width="100%">
   <img src="Change this later" />
