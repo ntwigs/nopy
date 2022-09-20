@@ -37,6 +37,8 @@ const setTextContent = (
   return button
 }
 
+const ALERT_WAIT_IN_MS = 2000
+
 const addCopyOnClick = (
   button: Node,
   alternative: string,
@@ -53,7 +55,7 @@ const addCopyOnClick = (
       alertContainer.removeChild(alert)
     }
 
-    const timeout = setTimeout(removeAlert, 2000)
+    const timeout = setTimeout(removeAlert, ALERT_WAIT_IN_MS)
 
     alert.addEventListener('click', () => {
       clearTimeout(timeout)
@@ -62,12 +64,12 @@ const addCopyOnClick = (
   })
 }
 
-export const getButtons = (button: Element, alternatives: string[]): Node[] => {
+export const getButtons = (button: HTMLDivElement, alternatives: string[]): HTMLDivElement[] => {
   const packageName = getPackageName(button)
   return alternatives.map((alternative) => {
     const buttonClone = button.cloneNode(true)
     const buttonSpan = getButtonSpan(buttonClone)
     addCopyOnClick(buttonClone, alternative, packageName)
     return setTextContent(buttonSpan, alternative, packageName, buttonClone)
-  })
+  }) as HTMLDivElement[]
 }

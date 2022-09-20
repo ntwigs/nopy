@@ -1,7 +1,4 @@
-export const getDevTitle = (element: Element): Element => {
-  const titleCopy = element.cloneNode() as HTMLHeadingElement
-
-  titleCopy.textContent = 'Dev Install'
-
-  return titleCopy as Element
+export const getDevTitle = (titleElement: HTMLHeadingElement): HTMLHeadingElement=> {
+  titleElement.textContent = 'Dev Install'
+  return titleElement
 }
