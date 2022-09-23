@@ -64,7 +64,10 @@ const addCopyOnClick = (
   })
 }
 
-export const getButtons = (button: HTMLDivElement, alternatives: string[]): HTMLDivElement[] => {
+export const getButtons = (
+  button: HTMLDivElement,
+  alternatives: string[]
+): HTMLDivElement[] => {
   const packageName = getPackageName(button)
   return alternatives.map((alternative) => {
     const buttonClone = button.cloneNode(true)

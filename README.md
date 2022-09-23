@@ -26,7 +26,7 @@ It's super simple. All you'll have to do is install the extension from the [Chro
 
 ## Show me the beauty 💅
 
-Install the extension and visit any package at [NPM](https://www.npmjs.com/), for example, [React](https://www.npmjs.com/package/react) and you'll see a bunch of install options where the copy buttons usually are. 
+Install the extension and visit any package at [NPM](https://www.npmjs.com/), for example, [React](https://www.npmjs.com/package/react) and you'll see a bunch of install options where the copy buttons usually are.
 
 <div width="100%">
   <img alt="nopy demo" src="https://user-images.githubusercontent.com/14088342/191093200-632de402-6dd2-4736-b3be-3ba6c68d0fa4.gif" />

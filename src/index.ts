@@ -8,7 +8,12 @@ import { logger } from './utils/logger'
 import { withError } from './utils/with-error'
 
 const alternatives = ['yarn add', 'bun install', 'pnpm add']
-const devAlternatives = ['npm i -D', 'yarn add -D', 'bun install -D', 'pnpm add -D']
+const devAlternatives = [
+  'npm i -D',
+  'yarn add -D',
+  'bun install -D',
+  'pnpm add -D',
+]
 
 const main = () => {
   const [button, buttonError] = withError<HTMLDivElement>(getExistingButton)
