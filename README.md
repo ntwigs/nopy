@@ -25,10 +25,11 @@ With this teeny tiny little extension - you'll be able to copy your dependencies
 It's super simple. All you'll have to do is install the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/klmgfjdnkpnmebmikdnopdkbibelccld/) and Nopy will be up and running. The next time you visit any package at [NPM](https://www.npmjs.com/) you'll be greeted with lots of install options.
 
 Nopy takes all your favorite package managers and slams them right into NPM - to make it as easy as possible to install dependencies. The currently supported options are the following:
-NPM 📮
-Yarn 😻
-Bun 🥚
-Pnpm 📁
+
+- NPM 📮
+- Yarn 😻
+- Bun 🥚
+- Pnpm 📁
 
 It's super easy to add more options. Just fork the repo, add what you're missing to the alternative arrays located in `/src/index.ts` - and fire off that beauty edit of yours as a PR. 🙏
 
