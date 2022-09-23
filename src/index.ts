@@ -1,5 +1,5 @@
 import { getButtons } from './main/button/get-buttons'
-import { getCopyButton } from './main/button/get-copy-button'
+import { getExistingButton } from './main/button/get-existing-button'
 import { getCopyTitle } from './main/title/get-copy-title'
 import { getDevTitle } from './main/title/get-dev-title'
 import { appendElements } from './utils/append-elements'
@@ -7,11 +7,11 @@ import { getAnimatedElements } from './utils/get-animated-elements'
 import { logger } from './utils/logger'
 import { withError } from './utils/with-error'
 
-const alternatives = ['yarn add', 'bun install']
-const devAlternatives = ['npm i -D', 'yarn add -D', 'bun install -D']
+const alternatives = ['yarn add', 'bun install', 'pnpm add']
+const devAlternatives = ['npm i -D', 'yarn add -D', 'bun install -D', 'pnpm add -D']
 
 const main = () => {
-  const [button, buttonError] = withError<HTMLDivElement>(() => getCopyButton())
+  const [button, buttonError] = withError<HTMLDivElement>(getExistingButton)
   if (buttonError) {
     return logger(buttonError)
   }
@@ -30,7 +30,7 @@ const main = () => {
     return logger(devButtonsError)
   }
 
-  const [title, titleError] = withError<HTMLHeadingElement>(() => getCopyTitle())
+  const [title, titleError] = withError<HTMLHeadingElement>(getCopyTitle)
   if (titleError) {
     return logger(titleError)
   }
