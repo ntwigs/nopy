@@ -1,8 +1,11 @@
 {
+  "author": "ntwigs",
   "manifest_version": 3,
   "name": "Nopy",
+  "short_name": "Nopy",
   "description": "Copy your npmjs dependencies with ease ❤️‍🔥",
   "version": "1.0.0",
+  "homepage_url": "https://github.com/ntwigs/nopy",
   "icons": {
     "16": "./icons/icon16.png",
     "48": "./icons/icon48.png",
