@@ -8,7 +8,7 @@
   <p align="center">
     <img alt='users badge' src='https://img.shields.io/chrome-web-store/users/klmgfjdnkpnmebmikdnopdkbibelccld?color=FFD3B4&style=flat-square' />
     <img alt='rating badge' src='https://img.shields.io/chrome-web-store/stars/klmgfjdnkpnmebmikdnopdkbibelccld?color=D5ECC2&style=flat-square' />
-    <img alt='version badge' src='https://img.shields.io/badge/version-1.0.0-blue.svg?color=98DDCA&style=flat-square' />
+    <img alt='version badge' src='https://img.shields.io/badge/version-1.1.0-blue.svg?color=98DDCA&style=flat-square' />
   </p>
 </div>
 
