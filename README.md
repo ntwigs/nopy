@@ -31,7 +31,7 @@ Nopy takes all your favorite package managers and slams them right into NPM - to
 - Bun 🥚
 - Pnpm 📁
 
-It's super easy to add more options. Just fork the repo, add what you're missing to the alternative arrays located in `/src/index.ts` - and fire off that beauty edit of yours as a PR. 🙏
+It's super easy to add more options. Just fork the repo, add what you're missing to the config located in `/src/config.ts` - and fire off that beauty edit of yours as a PR. 🙏
 
 ## Show me the beauty 💅
 
