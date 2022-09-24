@@ -13,14 +13,14 @@ const getPackageName = (button: Element | Node): string => {
   return packageName
 }
 
-const getButtonSpan = (button: Node): ChildNode => {
+const getButtonSpan = (button: Node): HTMLSpanElement => {
   const span = button.childNodes[CODE_POSITION].firstChild
 
   if (!span) {
     throw new Error('Could not get button span')
   }
 
-  return span
+  return span as HTMLSpanElement
 }
 
 const getButtonText = (alternative: string, packageName: string): string => {
@@ -31,7 +31,7 @@ const setTextContent = (
   span: Node,
   alternative: string,
   packageName: string,
-  button: Node
+  button: HTMLDivElement
 ) => {
   span.textContent = getButtonText(alternative, packageName)
   return button
@@ -64,15 +64,13 @@ const addCopyOnClick = (
   })
 }
 
-export const getButtons = (
+export const getButton = (
   button: HTMLDivElement,
-  alternatives: string[]
-): HTMLDivElement[] => {
+  alternative: string
+): HTMLElement => {
   const packageName = getPackageName(button)
-  return alternatives.map((alternative) => {
-    const buttonClone = button.cloneNode(true)
-    const buttonSpan = getButtonSpan(buttonClone)
-    addCopyOnClick(buttonClone, alternative, packageName)
-    return setTextContent(buttonSpan, alternative, packageName, buttonClone)
-  }) as HTMLDivElement[]
+  const buttonClone = button.cloneNode(true) as HTMLDivElement
+  const buttonSpan = getButtonSpan(buttonClone)
+  addCopyOnClick(buttonClone, alternative, packageName)
+  return setTextContent(buttonSpan, alternative, packageName, buttonClone)
 }

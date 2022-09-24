@@ -5,6 +5,9 @@
   "author": "ntwigs <oscar.cv.nordquist@gmail.com>",
   "license": "MIT",
   "prettier": "@goatee/prettier",
+  "alias": {
+    "@config": "./src/config"
+  },
   "scripts": {
     "start": "parcel watch public/manifest.json --host localhost",
     "build": "parcel build public/manifest.json",
