@@ -1,12 +1,11 @@
-const titleSelector =
-  '#top > div.fdbf4038.w-third-l.mt3.w-100.ph3.ph4-m.pv3.pv0-l > h3'
+import { textSelector } from './text-selector'
 
 export const getCopyText = (): HTMLHeadingElement => {
-  const title = document.querySelector<HTMLHeadingElement>(titleSelector)
+  const text = document.querySelector<HTMLHeadingElement>(textSelector)
 
-  if (!title) {
+  if (!text) {
     throw new Error('Could not find title')
   }
 
-  return title.cloneNode() as HTMLHeadingElement
+  return text.cloneNode() as HTMLHeadingElement
 }
