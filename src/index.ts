@@ -15,9 +15,9 @@ import { PATH_CHANGE } from './main/events/path-change'
 import { buttonSelector } from './main/button/button-selector'
 import { rootSelector } from './main/root/root-selector'
 
-const nopy = () => {
+const nopy = async () => {
   if (!hasElement(buttonSelector)) {
-    return waitForContentChange()
+    await waitForContentChange
   }
 
   if (hasElement(rootSelector)) {
@@ -46,23 +46,23 @@ const nopy = () => {
   appendElements(button, [root])
 }
 
-const waitForContentChange = () => {
+const waitForContentChange = new Promise<void>((resolve) => {
   const observer = new MutationObserver(([mutation], observer) => {
     const hasButton = hasElement(buttonSelector, mutation.target as HTMLElement)
     if (hasButton) {
-      nopy()
+      resolve()
       observer.disconnect()
     }
   })
 
   observer.observe(document.body, { subtree: true, childList: true })
-}
+})
 
 domHasLoaded.then(() => {
   chrome.runtime.onMessage.addListener((request) => {
     if (request.message === PATH_CHANGE) {
       withPackageCheck(
-        hasElement(rootSelector) ? waitForContentChange : nopy,
+        hasElement(rootSelector) ? () => waitForContentChange.then(nopy) : nopy,
         window.location.href
       )
     }
