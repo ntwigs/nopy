@@ -20,6 +20,12 @@ For far too long, the npm registry has only shown a "copy to install" button whi
 
 With this teeny tiny little extension - you'll be able to copy your dependencies from other popular package managers, such as Yarn or Bun install. Is the package something you wouldn't like to have in your dependencies? Fret not! Nopy also gives you the option to copy the install commando for development dependencies. 👌
 
+## Why should I use this? 🙋‍♂️
+
+The world is a dark and scary place - especially the internet, and NPM is no exception. It's super simple to typosquat or dependency confuse at NPM, which makes it even easier to accidentally install malware and malicious code. For example - [http-errors](https://github.com/jshttp/http-errors), a great package. Lots of downloads (51,000,000 weekly downloads), and lots of happy faces (1,300 stars). If you accidentally omit the `h` in the beginning and install the most suspicious package `ttp-errors`, you're going to have a bad time.
+
+Nopy makes it easy to just copy the (dev)dependencies and install the package - avoiding user errors that result in accidentally installing malicious software that grabs all of your data and violates your hardware. 🙏
+
 ## How do I use Nopy? 🤔
 
 It's super simple. All you'll have to do is install the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/klmgfjdnkpnmebmikdnopdkbibelccld/) and Nopy will be up and running. The next time you visit any package at [NPM](https://www.npmjs.com/) you'll be greeted with lots of install options.
