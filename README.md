@@ -10,6 +10,11 @@
     <img alt='rating badge' src='https://img.shields.io/chrome-web-store/stars/klmgfjdnkpnmebmikdnopdkbibelccld?color=D5ECC2&style=flat-square' />
     <img alt='version badge' src='https://img.shields.io/badge/version-1.2.0-blue.svg?color=98DDCA&style=flat-square' />
   </p>
+  </br>
+  <p align="center">Nopy is also at <strong>Product Hunt</strong>!💖</p>
+  <p align="center">
+  <a href="https://www.producthunt.com/posts/nopy?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-nopy" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=363276&theme=neutral" alt="Nopy - Copy&#0032;your&#0032;NPMJS&#0032;dependencies&#0032;with&#0032;ease | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+  </p>
 </div>
 
 <hr><br>
