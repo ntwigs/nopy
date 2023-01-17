@@ -74,3 +74,14 @@ export const getButton = (
   addCopyOnClick(buttonClone, alternative, packageName)
   return setTextContent(buttonSpan, alternative, packageName, buttonClone)
 }
+
+export const getTypesButton = (
+  button: HTMLDivElement,
+  typesPackageName: string,
+  alternative: string
+): HTMLElement => {
+  const buttonClone = button.cloneNode(true) as HTMLDivElement
+  const buttonSpan = getButtonSpan(buttonClone)
+  addCopyOnClick(buttonClone, alternative, typesPackageName)
+  return setTextContent(buttonSpan, alternative, typesPackageName, buttonClone)
+}
