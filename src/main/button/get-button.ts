@@ -66,22 +66,13 @@ const addCopyOnClick = (
 
 export const getButton = (
   button: HTMLDivElement,
-  alternative: string
+  alternative: string,
+  packageName?: string
 ): HTMLElement => {
-  const packageName = getPackageName(button)
+  const _packageName = packageName ? packageName : getPackageName(button)
   const buttonClone = button.cloneNode(true) as HTMLDivElement
   const buttonSpan = getButtonSpan(buttonClone)
-  addCopyOnClick(buttonClone, alternative, packageName)
-  return setTextContent(buttonSpan, alternative, packageName, buttonClone)
+  addCopyOnClick(buttonClone, alternative, _packageName)
+  return setTextContent(buttonSpan, alternative, _packageName, buttonClone)
 }
 
-export const getTypesButton = (
-  button: HTMLDivElement,
-  typesPackageName: string,
-  alternative: string
-): HTMLElement => {
-  const buttonClone = button.cloneNode(true) as HTMLDivElement
-  const buttonSpan = getButtonSpan(buttonClone)
-  addCopyOnClick(buttonClone, alternative, typesPackageName)
-  return setTextContent(buttonSpan, alternative, typesPackageName, buttonClone)
-}

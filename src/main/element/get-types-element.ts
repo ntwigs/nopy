@@ -1,5 +1,5 @@
 import { type Configs, type Elements, isButton, isText } from '@config'
-import { getTypesButton } from '../button/get-button'
+import { getButton } from '../button/get-button'
 import { getText } from '../text/get-text'
 
 export const getTypesElement = (
@@ -9,7 +9,7 @@ export const getTypesElement = (
 ): HTMLElement[] => {
   return config.map((conf) => {
     if (isButton(conf)) {
-      return getTypesButton(element.button, typesPackageName, conf.value)
+      return getButton(element.button, conf.value, typesPackageName)
     }
 
     if (isText(conf)) {
