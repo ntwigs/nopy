@@ -1,5 +1,5 @@
 import { domHasLoaded } from './utils/dom-has-loaded'
-import { config, typeConfig } from './config'
+import { config } from './config'
 import { getExistingButton } from './main/button/get-existing-button'
 import { getElement } from './main/element/get-element'
 import { getCopyText } from './main/text/get-copy-text'
@@ -14,9 +14,7 @@ import { hasElement } from './utils/has-element'
 import { PATH_CHANGE } from './main/events/path-change'
 import { buttonSelector } from './main/button/button-selector'
 import { rootSelector } from './main/root/root-selector'
-import { getTypesAnchor } from './main/types/get-types-anchor'
-import { getTypesPackage } from './main/types/get-types-package'
-import { getTypesElement } from './main/element/get-types-element'
+import { getOptionalTypes } from './main/types/get-optional-types'
 
 const nopy = async () => {
   if (!hasElement(buttonSelector)) {
@@ -44,13 +42,12 @@ const nopy = async () => {
     return logger(elementsError)
   }
 
-  const anchor = getTypesAnchor()
-  const typesPackage = getTypesPackage(anchor)
-  const typesElements = getTypesElement(
-    typeConfig,
-    { text, button },
-    typesPackage
+  const [typesElements, typesElementsError] = withError<HTMLElement[]>(() =>
+    getOptionalTypes({ text, button })
   )
+  if (typesElementsError) {
+    return logger(typesElementsError)
+  }
 
   const animatedElements = getAnimatedElements([...elements, ...typesElements])
   const root = getRootWithElements(animatedElements)
