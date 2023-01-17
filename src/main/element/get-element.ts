@@ -4,11 +4,12 @@ import { getText } from '../text/get-text'
 
 export const getElement = (
   config: Configs,
-  element: Elements
+  element: Elements,
+  packageName?: string
 ): HTMLElement[] => {
   return config.map((conf) => {
     if (isButton(conf)) {
-      return getButton(element.button, conf.value)
+      return getButton(element.button, conf.value, packageName)
     }
 
     if (isText(conf)) {
