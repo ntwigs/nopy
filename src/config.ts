@@ -45,6 +45,29 @@ export const config: Configs = [
   },
 ]
 
+export const typeConfig: Configs = [
+  {
+    element: 'text',
+    value: 'Types install',
+  },
+  {
+    element: 'button',
+    value: 'npm i -D',
+  },
+  {
+    element: 'button',
+    value: 'yarn add -D',
+  },
+  {
+    element: 'button',
+    value: 'bun install -D',
+  },
+  {
+    element: 'button',
+    value: 'pnpm add -D',
+  },
+]
+
 export const isButton = (config: Config): boolean => {
   return config.element === 'button'
 }
