@@ -8,7 +8,7 @@
   <p align="center">
     <img alt='users badge' src='https://img.shields.io/chrome-web-store/users/klmgfjdnkpnmebmikdnopdkbibelccld?color=FFD3B4&style=flat-square' />
     <img alt='rating badge' src='https://img.shields.io/chrome-web-store/stars/klmgfjdnkpnmebmikdnopdkbibelccld?color=D5ECC2&style=flat-square' />
-    <img alt='version badge' src='https://img.shields.io/badge/version-1.3.0-blue.svg?color=98DDCA&style=flat-square' />
+    <img alt='version badge' src='https://img.shields.io/badge/version-1.3.1-blue.svg?color=98DDCA&style=flat-square' />
   </p>
   </br>
   <p align="center">Nopy is also at <strong>Product Hunt</strong>!💖</p>
