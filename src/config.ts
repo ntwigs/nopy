@@ -37,7 +37,7 @@ export const config: Configs = [
   },
   {
     element: 'button',
-    value: 'bun install -D',
+    value: 'bun install -d',
   },
   {
     element: 'button',
