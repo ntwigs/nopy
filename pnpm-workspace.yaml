@@ -3,3 +3,5 @@ onlyBuiltDependencies:
   - '@swc/core'
   - lmdb
   - msgpackr-extract
+packages:
+  - 'src/**'
