@@ -1,1 +1,1 @@
-export const textSelector = '#top > div > h1 > span'
+export const textSelector = 'aside > h3'

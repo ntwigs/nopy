@@ -1,66 +1,57 @@
 import { getAlert } from '../alert/get-alert'
 import { getAlertContainer } from '../alert/get-alert-container'
 
-const CODE_POSITION = 1
-const getPackageName = (button: Element | Node): string => {
-  const buttonText = button.childNodes[CODE_POSITION].textContent
-
-  if (!buttonText) {
-    throw new Error('Could not find button text')
-  }
-
-  const [packageName] = buttonText.split(' ').reverse()
+const getPackageName = (button: HTMLElement): string => {
+  const [packageName] = button.textContent.split(' ').reverse()
   return packageName
 }
 
-const getButtonSpan = (button: Node): HTMLSpanElement => {
-  const span = button.childNodes[CODE_POSITION].firstChild
+const getCodeBlock = (button: HTMLDivElement) => {
+  const code = button.querySelector<HTMLElement>('code')
+  if (!code) {
+    throw new Error('Could not find code block in button')
+  }
+  return code
+}
 
-  if (!span) {
-    throw new Error('Could not get button span')
+const getCopyButton = (button: HTMLDivElement) => {
+  const copyButton = button.querySelector<HTMLElement>('button')
+  if (!copyButton) {
+    throw new Error('Could not find copy button in button')
+  }
+  return copyButton
+}
+
+const setSelection = (codeBlock: HTMLElement) => () => {
+  const range = document.createRange()
+  const selection = window.getSelection()
+
+  range.selectNodeContents(codeBlock)
+
+  selection?.removeAllRanges()
+  selection?.addRange(range)
+}
+
+const clearSelection = () => {
+  window.getSelection()?.removeAllRanges()
+}
+
+const copyPackageName = (codeBlock: HTMLElement) => () => {
+  const alertContainer = getAlertContainer()
+  const alert = getAlert()
+  navigator.clipboard.writeText(codeBlock.textContent)
+  alertContainer.appendChild(alert)
+
+  const removeAlert = () => {
+    alertContainer.removeChild(alert)
   }
 
-  return span as HTMLSpanElement
-}
+  const ALERT_WAIT_IN_MS = 2000
+  const timeout = setTimeout(removeAlert, ALERT_WAIT_IN_MS)
 
-const getButtonText = (alternative: string, packageName: string): string => {
-  return `${alternative} ${packageName}`
-}
-
-const setTextContent = (
-  span: Node,
-  alternative: string,
-  packageName: string,
-  button: HTMLDivElement
-) => {
-  span.textContent = getButtonText(alternative, packageName)
-  return button
-}
-
-const ALERT_WAIT_IN_MS = 2000
-
-const addCopyOnClick = (
-  button: Node,
-  alternative: string,
-  packageName: string
-) => {
-  button.addEventListener('click', () => {
-    const alertContainer = getAlertContainer()
-    const alert = getAlert()
-    const text = getButtonText(alternative, packageName)
-    navigator.clipboard.writeText(text)
-    alertContainer.appendChild(alert)
-
-    const removeAlert = () => {
-      alertContainer.removeChild(alert)
-    }
-
-    const timeout = setTimeout(removeAlert, ALERT_WAIT_IN_MS)
-
-    alert.addEventListener('click', () => {
-      clearTimeout(timeout)
-      removeAlert()
-    })
+  alert.addEventListener('click', () => {
+    clearTimeout(timeout)
+    removeAlert()
   })
 }
 
@@ -69,9 +60,17 @@ export const getButton = (
   alternative: string,
   packageName?: string
 ): HTMLElement => {
-  const _packageName = packageName ? packageName : getPackageName(button)
   const buttonClone = button.cloneNode(true) as HTMLDivElement
-  const buttonSpan = getButtonSpan(buttonClone)
-  addCopyOnClick(buttonClone, alternative, _packageName)
-  return setTextContent(buttonSpan, alternative, _packageName, buttonClone)
+
+  const codeBlock = getCodeBlock(buttonClone)
+  const packageNameWithFallback = packageName
+    ? packageName
+    : getPackageName(codeBlock)
+  codeBlock.textContent = `${alternative} ${packageNameWithFallback}`
+
+  const copyButton = getCopyButton(buttonClone)
+  copyButton.addEventListener('mouseenter', setSelection(codeBlock))
+  copyButton.addEventListener('mouseleave', clearSelection)
+  copyButton.addEventListener('click', copyPackageName(codeBlock))
+  return buttonClone
 }
