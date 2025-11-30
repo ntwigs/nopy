@@ -12,6 +12,7 @@
     "start": "parcel watch public/manifest.json --host localhost",
     "build": "parcel build public/manifest.json",
     "format": "prettier --write .",
+    "lint": "tsc",
     "prod": "parcel build public/manifest.json --no-source-maps"
   },
   "devDependencies": {
