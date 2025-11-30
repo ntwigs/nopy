@@ -1,4 +1,4 @@
-import { type Elements, typeConfig } from '@config'
+import { type Elements, typeConfig } from '@/config'
 import { getTypesAnchor } from './get-types-anchor'
 import { getTypesPackage } from './get-types-package'
 import { withError } from '../../utils/with-error'

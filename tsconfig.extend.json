@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@config": ["./config.ts"]
+      "@/config": ["./config.ts"]
     }
   }
 }
