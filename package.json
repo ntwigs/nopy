@@ -5,21 +5,19 @@
   "author": "ntwigs <oscar.cv.nordquist@gmail.com>",
   "license": "MIT",
   "prettier": "@goatee/prettier",
-  "alias": {
-    "@config": "./src/config"
-  },
   "scripts": {
     "start": "parcel watch public/manifest.json --host localhost",
     "build": "parcel build public/manifest.json",
+    "prod": "parcel build public/manifest.json --no-source-maps",
     "format": "prettier --write .",
-    "prod": "parcel build public/manifest.json --no-source-maps"
+    "lint": "tsc"
   },
   "devDependencies": {
     "@goatee/prettier": "0.0.4",
-    "@parcel/config-webextension": "2.7.0",
-    "@types/chrome": "0.0.197",
-    "parcel": "2.7.0",
-    "prettier": "2.7.1",
-    "typescript": "4.8.3"
+    "@parcel/config-webextension": "2.16.1",
+    "@types/chrome": "0.1.31",
+    "parcel": "2.16.1",
+    "prettier": "3.7.2",
+    "typescript": "5.9.3"
   }
 }

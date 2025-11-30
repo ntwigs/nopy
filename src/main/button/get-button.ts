@@ -75,4 +75,3 @@ export const getButton = (
   addCopyOnClick(buttonClone, alternative, _packageName)
   return setTextContent(buttonSpan, alternative, _packageName, buttonClone)
 }
-

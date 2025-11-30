@@ -1,4 +1,4 @@
-import { type Configs, type Elements, isButton, isText } from '@config'
+import { type Configs, type Elements, isButton, isText } from '@/config'
 import { getButton } from '../button/get-button'
 import { getText } from '../text/get-text'
 

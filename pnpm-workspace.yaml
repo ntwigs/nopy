@@ -1,4 +1,7 @@
 onlyBuiltDependencies:
   - '@parcel/watcher'
+  - '@swc/core'
   - lmdb
   - msgpackr-extract
+packages:
+  - 'src/**'
